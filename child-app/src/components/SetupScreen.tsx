@@ -92,20 +92,17 @@ export default function SetupScreen({ onComplete }: Props) {
           <Text style={styles.subtitle}>Setup Protection</Text>
         </View>
 
-        {/* Progress Bar */}
         <View style={styles.progressContainer}>
           <View style={styles.progressBar}><View style={[styles.progressFill, { width: `${progress * 100}%` }]} /></View>
           <Text style={styles.progressText}>Step {currentStep + 1} of {STEPS.length}</Text>
         </View>
 
-        {/* Step Indicators */}
         <View style={styles.stepIndicators}>
           {STEPS.map((s, i) => (
             <View key={s.id} style={[styles.stepDot, i === currentStep && { backgroundColor: step.color, width: 24 }, completedSteps.has(s.id) && { backgroundColor: '#10b981' }]} />
           ))}
         </View>
 
-        {/* Current Step */}
         <View style={styles.stepCard}>
           <View style={[styles.stepIcon, { backgroundColor: `${step.color}20` }]}>
             <Ionicons name={step.icon} size={32} color={step.color} />
@@ -123,7 +120,6 @@ export default function SetupScreen({ onComplete }: Props) {
           </TouchableOpacity>
         </View>
 
-        {/* Bottom Info */}
         <View style={styles.infoCard}>
           <Ionicons name="information-circle" size={20} color="#64748b" />
           <Text style={styles.infoText}>These settings ensure ShieldGuard runs 24/7 in the background. You can change them later in your phone settings.</Text>

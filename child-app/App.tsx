@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { View, Text, StyleSheet, ScrollView, StatusBar, TouchableOpacity, ActivityIndicator } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
-import { isSetupComplete } from './services/BootService'
-import { initializeMonitoring, getPairingCode } from './services/SyncService'
-import { initializeSmartSync, manualSync, getSyncStats, type SyncStats } from './services/SmartSyncService'
-import { getCurrentScreenState, onScreenStateChange, type ScreenState } from './services/ScreenStateService'
+import { isSetupComplete } from './src/services/BootService'
+import { initializeMonitoring, getPairingCode } from './src/services/SyncService'
+import { initializeSmartSync, manualSync, getSyncStats, type SyncStats } from './src/services/SmartSyncService'
+import { getCurrentScreenState, onScreenStateChange, type ScreenState } from './src/services/ScreenStateService'
 import SetupScreen from './src/components/SetupScreen'
 
 export default function App() {

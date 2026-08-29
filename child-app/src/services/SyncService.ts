@@ -1,4 +1,4 @@
-import { Platform, NativeModules, NativeEventEmitter } from 'react-native'
+import { Platform } from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import CONFIG from '../config'
 
@@ -51,7 +51,7 @@ async function startBackgroundLocation() {
     if (error || !data) return
     for (const loc of data.locations || []) await syncLocation({ latitude: loc.coords.latitude, longitude: loc.coords.longitude, timestamp: new Date(loc.timestamp).toISOString() })
   })
-  await Location.startLocationUpdatesAsync(TASK, { accuracy: Location.Accuracy.Balanced, timeInterval: CONFIG.LOCATION_SYNC_INTERVAL, distanceInterval: 100, showsBackgroundLocationIndicator: true, foregroundService: { notificationTitle: 'ShieldGuard', notificationBody: 'Protecting your device', notificationColor: '#06b6d4' } })
+  await Location.startLocationUpdatesAsync(TASK, { accuracy: Location.Accuracy.Balanced, timeInterval: 60000, distanceInterval: 100, showsBackgroundLocationIndicator: true, foregroundService: { notificationTitle: 'ShieldGuard', notificationBody: 'Protecting your device', notificationColor: '#06b6d4' } })
 }
 
 export async function syncAllData() {
