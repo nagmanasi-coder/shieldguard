@@ -4,7 +4,13 @@
     "slug": "shieldguard-child",
     "version": "1.0.0",
     "orientation": "portrait",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1a1a2e"
+    },
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
@@ -13,7 +19,8 @@
     "android": {
       "package": "com.shieldguard.child",
       "adaptiveIcon": {
-        "backgroundColor": "#0f172a"
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1a1a2e"
       },
       "permissions": [
         "ACCESS_FINE_LOCATION",
@@ -36,7 +43,7 @@
       [
         "expo-location",
         {
-          "locationAlwaysAndWhenInUsePermission": "Allow ShieldGuard to track location for family safety.",
+          "locationAlwaysAndWhenInUsePermission": "Allow ShieldGuard Safe to track location for family safety.",
           "isAndroidBackgroundLocationEnabled": true,
           "isAndroidForegroundServiceEnabled": true
         }
