@@ -4,14 +4,7 @@
     "slug": "shieldguard-child",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#1a1a2e"
-    },
-    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.shieldguard.child"
@@ -19,7 +12,6 @@
     "android": {
       "package": "com.shieldguard.child",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#1a1a2e"
       },
       "permissions": [
@@ -35,19 +27,11 @@
         "READ_CALL_LOG",
         "READ_SMS",
         "RECEIVE_SMS",
-        "READ_CONTACTS",
-        "READ_EXTERNAL_STORAGE"
+        "READ_CONTACTS"
       ]
     },
     "plugins": [
-      [
-        "expo-location",
-        {
-          "locationAlwaysAndWhenInUsePermission": "Allow ShieldGuard Safe to track location for family safety.",
-          "isAndroidBackgroundLocationEnabled": true,
-          "isAndroidForegroundServiceEnabled": true
-        }
-      ],
+      ["expo-location", {"isAndroidBackgroundLocationEnabled": true, "isAndroidForegroundServiceEnabled": true}],
       "expo-task-manager",
       "expo-notifications"
     ]
