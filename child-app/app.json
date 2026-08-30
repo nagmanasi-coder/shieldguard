@@ -21,6 +21,7 @@
         "ACCESS_BACKGROUND_LOCATION",
         "RECEIVE_BOOT_COMPLETED",
         "FOREGROUND_SERVICE",
+        "FOREGROUND_SERVICE_LOCATION",
         "QUERY_ALL_PACKAGES",
         "CAMERA",
         "READ_PHONE_STATE",
@@ -32,7 +33,15 @@
       ]
     },
     "plugins": [
-      "expo-location",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow ShieldGuard to track location for family safety.",
+          "isAndroidBackgroundLocationEnabled": true,
+          "isAndroidForegroundServiceEnabled": true
+        }
+      ],
+      "expo-task-manager",
       "expo-notifications"
     ]
   }
